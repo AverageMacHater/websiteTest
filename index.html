@@ -2,46 +2,77 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" href="tictactoe.css0">
 </head>
 
 <body>
-    <table align="center">
-        <tr>
-            <h1 align="center">The TAs</h1>
-        </tr>
-        <tr>
-            <td>
-                <a align="center" href="aboutAmanda.html">
-                    <h2>Amanda</h2>
-                </a>
-            </td>
-            <td>
-                <a align="center" href="aboutJosh.html">
-                    <h2>Josh</h2>
-                </a>
-            </td>
-            <td>
-                <a align="center" href="aboutDmytro.html">
-                    <h2>Dmytro</h2>
-                </a>
-            </td>
-            <td>
-                <a align="center" href="aboutRaneesh.html">
-                    <h2>Raneesh stinks</h2>
-                </a>
-            </td>
-        </tr>
-        <tr>
+    </br>
+    </br>
+    </br>
 
+    <div class="wrapper">
+        <button class="restartButton" id="restartButton">Restart</button>
+    </div>
+
+    <h2 id="Owon">O won!</h2>
+    <h2 id="Xwon">X won!</h2>
+    <h2 id="tie">Tie!</h2>
+
+    <table border="1" align="center">
+        <tr>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="1"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="2"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="3"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="4"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="5"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="6"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="7"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="8"></div>
+                </div>
+            </td>
+            <td>
+                <div class="cell">
+                    <div class="blank" id="9"></div>
+                </div>
+            </td>
         </tr>
     </table>
 </body>
 
 </html>
 
-<style>
-    table {
-        border-spacing: 30px;
-    }
-</style>
+<script src="tictactoe.js"></script>
