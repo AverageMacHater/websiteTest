@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function checkFreeResponse() {
+                input = document.getElementByID('UserAnswer')
+
+                if (input.value == 1991) {
+                    input.style.backgroundColor = 'Green';
+                    document.getElementByID('feedback').value = 'Correct!';
+                }
+                else {
+                    input.style.backgroundColor = 'Red';
+                    document.getElementByID('feedback').value = 'Incorrect';
+                }
+            }
+
+            function checkMultiChoice(event) {
+                // Get the element which triggered the event
+                let button = event.target;
+
+                // Check if the element's inner HTML matches expected answer
+                if (button.innerHTML == 'C/C++') {
+                    button.style.backgroundColor = 'Green';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                }
+                else {
+                    button.style.backgroundColor = 'Red';
+                    button.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What was Windows OS written in?</h3>
+                <button onclick="checkMultiChoice(event)">C/C++</button>
+                <button onclick="checkMultiChoice(event)">Python</button>
+                <button onclick="checkMultiChoice(event)">Scratch</button>
+                <button onclick="checkMultiChoice(event)">SQL</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What year was python made in?</h3>
+                <input id='userAnswer'>
+                <button onclick="checkFreeResponse()">submit</button>
+                <p id='Feedback'></p>
+            </div>
+        </div>
+    </body>
+</html>

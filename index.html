@@ -1,23 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rotating Cube Photo Gallery</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="scene">
-    <div class="cube">
-      <div class="face front"> <img src="image1.jfif" alt="Image 1"> </div>
-      <div class="face back"> <img src="image2.jfif" alt="Image 2"> </div>
-      <div class="face right"> <img src="image3.jfif" alt="Image 3"> </div>
-      <div class="face left"> <img src="image4.jfif" alt="Image 4"> </div>
-      <div class="face top"> <img src="image5.jfif" alt="Image 5"> </div>
-      <div class="face bottom"> <img src="image6.jfif" alt="Image 6"> </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+<body style="background-color: black">
+
+<title>Kris's cypher</title>
+<div align="center"><h1 style="color: white;">Kris's cypher</h1>
+</br>
+</br>
+</br>
+<p style="color: white;">Type in some text below.</p>
+<input id="input" style="color: white; background-color: black;">
+<button type="button" style="color: white; background-color: black;" onclick="encrypt()">encrypt</button>
+<button type="button" style="color: white; background-color: black;" onclick="decrypt()">decrypt</button>
+</br>
+</br>
+</br>
+<h2 id="output" style="color: white;"></h2>
+</div>
+
 </body>
 </html>
+
+<script>
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    const cypher = [".", "!", "w", ":", "u", ";", "s", "$", "q", "&", "o", "\"", "||", "'", "L", "0", "i", "(", "g", "#", "d", "?", "]", "a", "%", "z"]
+    let inputValue = "";
     
+    function decrypt(){
+        let out = "";
+        inputValue = document.getElementById("input").value;
+        inputValue = inputValue.toLowerCase();
+        for (let i = 0; i < inputValue.length; i++){
+            if (inputValue[i] == "//"){
+                out += " ";
+            }
+            for (let j = 0; j < 26; j++){
+                if (inputValue[i] == cypher[j]){
+                    out += alphabet[j];
+                }
+            }
+        }
+        document.getElementById("output").textContent = "output: " + out;
+    }
+    function encrypt(){
+        let out = "";
+        inputValue = document.getElementById("input").value;
+        inputValue = inputValue.toLowerCase();
+        for (let i = 0; i < inputValue.length; i++){
+            if (inputValue[i] == " "){
+                out += "//";
+            }
+            for (let j = 0; j < 26; j++){
+                if (inputValue[i] == alphabet[j]){
+                    out += cypher[j];
+                }
+            }
+        }
+        document.getElementById("output").textContent = "output: " + out;
+    }
+</script>
